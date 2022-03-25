@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab4</title>
+        <meta name="description" content="lab3">
+        <meta name="author" content="_iulia">
+        <!-- JavaScript code -->
+        <script src="interactivity.js"></script>
+        <!-- CSS code -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onload="loadPuzzle(); dropDrag()">
+
+        <p>Update second combo box based on first one:</p>
+        <select id="counties" class="combo-box" onchange="filterCities()">
+            <option value="countie">Countie</option>
+            <option value="Cluj">Cluj</option>
+            <option value="Alba">Alba</option>
+            <option value="Constanta">Constanta</option>
+            <option value="Timis">Timis</option>
+        </select>
+        <select id="cities" class="combo-box">
+            <option value="city">City</option>
+        </select>
+        <pre>
+
+
+
+
+        </pre>
+
+        <hr>
+        <p>Drag and Drop image:</p>
+        <img id="drag" src="duck.jpg" alt="">
+        <pre>
+
+
+
+
+
+
+        </pre>
+        <hr>
+        <p>Puzzle:</p>
+        <table id="puzzle-table">
+            <tr>
+                <td id="1" onclick="move(1,this);"></td>
+                <td id="2" onclick="move(2,this);"></td>
+                <td id="3" onclick="move(3,this);"></td>
+            </tr>
+            <tr>
+                <td id="4" onclick="move(4,this);"></td>
+                <td id="5" onclick="move(5,this);"></td>
+                <td id="6" onclick="move(6,this);"></td>
+            </tr>
+            <tr>
+                <td id="7" onclick="move(7,this);"></td>
+                <td id="8" onclick="move(8,this);"></td>
+                <td id="9" onclick="move(9,this);"></td>
+            </tr>
+        </table>
+        <hr>
+
+        <p>Click on header to sort ascending/descending:</p>
+        <table id="sort-table">
+            <tr>
+                <th onclick="sort(0)">Firstname</th>
+                <th onclick="sort(1)">Lastname</th>
+                <th onclick="sort(2)">Age</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Will</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>Emma</td>
+                <td>Deckle</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Santa</td>
+                <td>Claus</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>Kim</td>
+                <td>Lavender</td>
+                <td>36</td>
+            </tr>
+        </table>
+        <hr>
+
+        <p>
+            Double click on an item to move to the other list:
+        </p>
+        <div id="div-lists">
+            <ul id="first-list">
+                <li ondblclick="moveToList(event,2)">one</li>
+                <li ondblclick="moveToList(event,2)">two</li>
+                <li ondblclick="moveToList(event,2)">three</li>
+            </ul>
+            <ul id="second-list">
+                <li ondblclick="moveToList(event,1)">aaa</li>
+                <li ondblclick="moveToList(event,1)">bbb</li>
+                <li ondblclick="moveToList(event,1)">ccc</li>
+            </ul>
+        </div>
+        <hr>
+
+    </body>
+</html>

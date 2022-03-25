@@ -1,0 +1,40 @@
+
+#drag{
+    height: 100px;
+    width: 100px;
+    border: lightsteelblue solid 1px;
+    position: absolute;
+    top:220px;
+}
+
+td{
+    margin:0;
+    border:0;
+    padding:0;
+    height: auto;
+    width: auto;
+}
+
+#puzzle-table{
+    width: 20%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+#sort-table{
+    width: 400px;
+    height: auto;
+}
+
+#sort-table, #sort-table th, #sort-table td{
+    border: lightsteelblue solid 1px;
+    text-align: center;
+}
+
+#div-lists{
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

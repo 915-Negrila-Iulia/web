@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab5</title>
+    <meta name="description" content="lab5">
+    <meta name="author" content="_iulia">
+    <!-- JavaScript code -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="interactivityLab5.js"></script>
+    <style>
+        body{
+            height:100%;
+        }
+        #form-1 div, #form-2 div{
+            display: flex;
+            width: 300px;
+            height: auto;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        #text-area{
+            width: 300px;
+            height: 100px;
+            vertical-align: top;
+        }
+        button{
+            width: 200px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="grey-div"></div>
+    <form id="form-1" class="container">
+        <div>
+            <label>First Name</label>
+            <input type="text" id="firstName" placeholder="Enter First Name">
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input type="text" id="lastName" placeholder="Enter Last Name">
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter email">
+        </div>
+        <div>
+            <label>Confirm Email</label>
+            <input type="email" id="confirmEmail" placeholder="Enter email">
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <div>
+            <textarea id="text-area"></textarea>
+        </div>
+        <div class="container">
+            <button id="button-1">Click me!</button>
+        </div>
+    </form>
+
+    <div id="form-2" class="container-2">
+        <form>
+            <p>Let us know your favourites!</p>
+            <div>
+                <label>Animal</label>
+                <input type="text" id="animal" placeholder="Enter animal">
+            </div>
+            <div>
+                <label>Colour</label>
+                <input type="text" id="colour" placeholder="Enter colour">
+            </div>
+            <div>
+                <label>Song</label>
+                <input type="text" id="song" placeholder="Enter song">
+            </div>
+            <div>
+                <label>Book</label>
+                <input type="text" id="book" placeholder="Enter book">
+            </div>
+            <div class="container">
+                <button id="button-2">Append data</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

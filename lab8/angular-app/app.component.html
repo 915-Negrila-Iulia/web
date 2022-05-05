@@ -1,0 +1,64 @@
+<div *ngIf="error">{{error}}</div>
+<div *ngIf="success">{{success}}</div>
+
+<div id="theList">
+  <h2>List of Recipes</h2>
+<!--  <ul>-->
+<!--    <li *ngFor="let item of recipes">{{item.rid}} | {{item.recipeName}} | {{item.type}}</li>-->
+<!--  </ul>-->
+  <table id='recordsTable' border='1'><tr><th>RID</th><th>RecipeName</th><th>Type</th><th>Description</th><th>Author</th><th colspan='2'>Actions</th></tr>
+
+    <tr *ngFor="let item of recipes; let i = index;">
+<!--  <td><input type="text" [(ngModel)]="recipes[i].rid"></td> -->
+      <td>{{item.rid}}</td>
+      <td><input type="text" [(ngModel)]="recipes[i].recipeName" #recipeName="ngModel"></td>
+      <td><input type="text" [(ngModel)]="recipes[i].type" #type="ngModel"></td>
+      <td><input type="text" [(ngModel)]="recipes[i].description" #description="ngModel"></td>
+      <td>{{item.uid}}</td>
+      <td><button class='updateButton' (click)="updateRecipe(item.rid,recipeName,type,description,item.uid)">update</button></td>
+      <td><button class='deleteButton' (click)="deleteRecipe(item.rid? item.rid:0)">delete</button></td>
+    </tr>
+  </table>
+
+  <br><br>
+
+  <div>
+    <input type="text" name="filterText" [(ngModel)]="filterText">
+    <button class='filterButton' (click)=" changePrevFilter(); filterRecipes(filterText)">filter</button>
+    <label>{{prevFilter[prevFilter.length-2]}}</label>
+  </div>
+
+  <div id="theForm">
+    <h2>Add Recipe</h2>
+    <form #f="ngForm" name="theForm" (submit)="addRecipe(f)">
+      <div class="form-group">
+        <label>Name</label>
+        <!-- ngModel - two-way data binding -->
+        <input type="text"
+               class="form-control"
+               name="recipeName"
+               [(ngModel)]="recipe.recipeName"
+               #recipeName="ngModel"
+               required>
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+        <input type="text"
+               class="form-control"
+               name="type"
+               [(ngModel)]="recipe.type"
+               #type="ngModel"
+               required>
+      </div>
+      <div>
+        <label>Description</label>
+        <input type="text"
+               class="form-control"
+               name="type"
+               [(ngModel)]="recipe.description"
+               #description="ngModel">
+      </div>
+      <button class="addButton">Add</button>
+    </form>
+  </div>
+</div>
